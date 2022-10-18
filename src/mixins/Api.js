@@ -6,10 +6,12 @@ export default {
   },
 
   methods: {
-    getData(url) {
-      fetch(url).then((response) => response.json()).then((response) => {
+    async getData(url) {
+      await fetch(url).then((response) => response.json()).then((response) => {
         this.data = response;
       });
+
+      return this.data;
     },
   },
 }
